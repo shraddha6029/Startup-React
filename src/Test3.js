@@ -19,14 +19,14 @@ if (currDate >= 1 && currDate < 12) {
 
 const Test3 = () => {
   return (
-    <>
+    <div className="container mt-5">
       <h2>
         Hello Shraddha, <span style={cssStyle}>{greeting}</span>
       </h2>
       <Button to="/test1" color="danger">
         Danger!
       </Button>
-    </>
+    </div>
   );
 };
 

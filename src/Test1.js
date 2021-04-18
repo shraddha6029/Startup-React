@@ -4,11 +4,10 @@ const Test1 = () => {
   const fname = "Shraddha";
   const lname = "Chhatraliya";
   return (
-    <>
-      <hr />
+    <div className="container mt-5">
       <h1>Template Literals</h1>
       <p>{`Output is : ${fname} ${lname}`}</p>
-    </>
+    </div>
   );
 };
 

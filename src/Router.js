@@ -20,7 +20,7 @@ const AppRouter = () => {
 
   return (
     <Router>
-      <Navbar color="light" light expand="md">
+      <Navbar color="light" light expand="md" className="container-fluid">
         <NavbarBrand href="/">React</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

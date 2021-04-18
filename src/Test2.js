@@ -4,12 +4,11 @@ const Test2 = () => {
   const currDate = new Date().toLocaleDateString();
   const currTime = new Date().toLocaleTimeString();
   return (
-    <>
-      <hr />
+    <div className="container mt-5">
       <h1>Time</h1>
       <p>current date: {currDate} </p>
       <p>current time: {currTime} </p>
-    </>
+    </div>
   );
 };
 
