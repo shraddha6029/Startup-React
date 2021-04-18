@@ -26,18 +26,19 @@ const AppRouter = () => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ms-auto" navbar>
             <NavItem>
-              <Link className="text-decoration-none px-3" to="/test3">
-                If-else
+              <Link className="text-decoration-none px-3" to="/test1">
+                Template Literals
               </Link>
             </NavItem>
+
             <NavItem>
               <Link className="text-decoration-none px-3" to="/test2">
                 Date-Time
               </Link>
             </NavItem>
             <NavItem>
-              <Link className="text-decoration-none px-3" to="/test1">
-                Template Literals
+              <Link className="text-decoration-none px-3" to="/test3">
+                If-else
               </Link>
             </NavItem>
           </Nav>
