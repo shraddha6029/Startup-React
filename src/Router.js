@@ -12,6 +12,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Test1 from "./Test1";
 import Test2 from "./Test2";
 import Test3 from "./Test3";
+import ExampleImportExport from "./components/ExampleImportExport";
 
 const AppRouter = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,6 +42,14 @@ const AppRouter = () => {
                 If-else
               </Link>
             </NavItem>
+            <NavItem>
+              <Link
+                className="text-decoration-none px-3"
+                to="/components/import-export"
+              >
+                Import-Export
+              </Link>
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
@@ -53,6 +62,9 @@ const AppRouter = () => {
         </Route>
         <Route path="/test3">
           <Test3 />
+        </Route>
+        <Route path="/components/import-export">
+          <ExampleImportExport />
         </Route>
       </Switch>
     </Router>
