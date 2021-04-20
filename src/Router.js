@@ -13,6 +13,7 @@ import Test1 from "./Test1";
 import Test2 from "./Test2";
 import Test3 from "./Test3";
 import ExampleImportExport from "./components/ExampleImportExport";
+import ExampleProps from "./components/ExampleProps";
 
 const AppRouter = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,6 +51,14 @@ const AppRouter = () => {
                 Import-Export
               </Link>
             </NavItem>
+            <NavItem>
+              <Link
+                className="text-decoration-none px-3"
+                to="/components/props"
+              >
+                Props
+              </Link>
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
@@ -65,6 +74,9 @@ const AppRouter = () => {
         </Route>
         <Route path="/components/import-export">
           <ExampleImportExport />
+        </Route>
+        <Route path="/components/props">
+          <ExampleProps />
         </Route>
       </Switch>
     </Router>

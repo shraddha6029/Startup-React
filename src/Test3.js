@@ -1,5 +1,3 @@
-import { Button } from "reactstrap";
-
 let currDate = new Date();
 currDate = currDate.getHours();
 
