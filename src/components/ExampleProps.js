@@ -1,7 +1,6 @@
 import React from "react";
 import { Row, Container } from "reactstrap";
 import ExamplePropsData from "./ExamplePropsData";
-import ReactDom from "react-dom";
 import Data from "./Data";
 
 const ExampleProps = () => {
