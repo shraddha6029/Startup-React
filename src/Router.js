@@ -15,6 +15,7 @@ import Test3 from "./Test3";
 import ExampleImportExport from "./components/ExampleImportExport";
 import ExampleProps from "./components/ExampleProps";
 import SlotMachine from "./components/SlotMachine";
+import UseStateHooks from "./components/UseStateHooks";
 
 const AppRouter = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -68,6 +69,14 @@ const AppRouter = () => {
                 Slot Machine
               </Link>
             </NavItem>
+            <NavItem>
+              <Link
+                className="text-decoration-none px-3"
+                to="/components/use-state"
+              >
+                UseStateHooks
+              </Link>
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
@@ -89,6 +98,9 @@ const AppRouter = () => {
         </Route>
         <Route path="/components/slot-machine">
           <SlotMachine />
+        </Route>
+        <Route path="/components/use-state">
+          <UseStateHooks />
         </Route>
       </Switch>
     </Router>
