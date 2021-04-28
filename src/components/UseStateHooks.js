@@ -12,14 +12,33 @@ const UseStateHooks = () => {
     setCount(count - 1);
   };
 
+  // 2
+  let currTime = new Date().toLocaleTimeString();
+
+  const [curDate, setCurDate] = useState(currTime);
+
+  const GetCurrentTime = () => {
+    let currTime = new Date().toLocaleTimeString();
+    setCurDate(currTime);
+  };
+
   return (
     <Container className="mt-5">
-      <h1>{count}</h1>
-      <Button color="success" className="me-2" onClick={Increase}>
+      <h1>Increment & Decreament Number</h1>
+      <h2>{count}</h2>
+
+      <Button color="danger" className="me-2" onClick={Decrease}>
+        Decrement
+      </Button>
+      <Button color="success" onClick={Increase}>
         Increment
       </Button>
-      <Button color="danger" onClick={Decrease}>
-        Decreament
+      <hr />
+      {/* time example */}
+      <h1 className="mt-5">Get Current Time</h1>
+      <h2>{curDate}</h2>
+      <Button color="primary" onClick={GetCurrentTime}>
+        Get Time
       </Button>
     </Container>
   );
