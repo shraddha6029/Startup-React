@@ -1,6 +1,8 @@
 import react, { useState } from "react";
 import { Button, Container } from "reactstrap";
 
+import ExampleColorChange from "./ExampleColorChange";
+
 const UseStateHooks = () => {
   const [count, setCount] = useState(0);
 
@@ -23,7 +25,7 @@ const UseStateHooks = () => {
   };
 
   return (
-    <Container className="mt-5">
+    <Container className="my-5">
       <h1>Increment & Decreament Number</h1>
       <h2>{count}</h2>
 
@@ -40,6 +42,9 @@ const UseStateHooks = () => {
       <Button color="primary" onClick={GetCurrentTime}>
         Get Time
       </Button>
+
+      {/* color change */}
+      <ExampleColorChange />
     </Container>
   );
 };
