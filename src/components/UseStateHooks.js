@@ -2,6 +2,7 @@ import react, { useState } from "react";
 import { Button, Container } from "reactstrap";
 
 import ExampleColorChange from "./ExampleColorChange";
+import ExampleForm from "./ExampleForm";
 
 const UseStateHooks = () => {
   const [count, setCount] = useState(0);
@@ -45,6 +46,9 @@ const UseStateHooks = () => {
 
       {/* color change */}
       <ExampleColorChange />
+
+      {/* form */}
+      <ExampleForm />
     </Container>
   );
 };

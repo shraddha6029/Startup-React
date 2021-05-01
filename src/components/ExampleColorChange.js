@@ -30,9 +30,15 @@ const ExampleColorChange = () => {
       </div>
 
       <ButtonGroup className="mt-3 ">
-        <Button onClick={GetbgColor}>Info</Button>
-        <Button onClick={GetbgColor2}>Danger</Button>
-        <Button onClick={GetbgColor3}>Warning</Button>
+        <Button color="info" onClick={GetbgColor}>
+          Info
+        </Button>
+        <Button color="danger" onClick={GetbgColor2}>
+          Danger
+        </Button>
+        <Button color="warning" onClick={GetbgColor3}>
+          Warning
+        </Button>
       </ButtonGroup>
     </>
   );
