@@ -17,12 +17,24 @@ const ExampleForm = () => {
   const [fullname, setFullName] = useState();
 
   const inputChange = (event) => {
-    setName(event.target.value);
-    // console.log(event.target.value);
+    // setName(event.target.value);
+    console.log(event.target.name);
+    console.log(event.target.value);
   };
 
-  const onSubmit = (e) => {
+  const submitEvent = (e) => {
     setFullName(name);
+    e.preventDefault();
+  };
+
+  // 2
+  const [newFullName, setNewFullName] = useState({
+    fname: "",
+    lname: ""
+  });
+
+  const newOnSubmit = (e) => {
+    // setFullName(name);
     e.preventDefault();
   };
 
@@ -31,15 +43,15 @@ const ExampleForm = () => {
       <h4 className="mt-5">Form</h4>
       <Row>
         <Col md="6">
-          <Form>
+          <form onSubmit={submitEvent}>
             <FormGroup>
               <Label for="exampleEmail">Full Name</Label>
               <Input type="text" placeholder="Name" onChange={inputChange} />
             </FormGroup>
-            <Button onClick={onSubmit} className="mt-3" color="primary">
+            <Button type="submit" className="mt-3" color="primary">
               Submit
             </Button>
-          </Form>
+          </form>
         </Col>
         <Col md="6">
           <Card>
@@ -50,6 +62,33 @@ const ExampleForm = () => {
           </Card>
         </Col>
       </Row>
+
+      <h4 className="mt-5">Form with object</h4>
+      <form onSubmit={newOnSubmit}>
+        <FormGroup>
+          <Label for="exampleEmail">First Name</Label>
+          <Input
+            type="text"
+            placeholder="First Name"
+            onChange={inputChange}
+            name="fname"
+            value={newFullName.fname}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="exampleEmail">Last Name</Label>
+          <Input
+            type="text"
+            placeholder="Last Name"
+            onChange={inputChange}
+            name="lname"
+            value={newFullName.lname}
+          />
+        </FormGroup>
+        <Button type="submit" className="mt-3" color="primary">
+          Submit
+        </Button>
+      </form>
     </>
   );
 };
