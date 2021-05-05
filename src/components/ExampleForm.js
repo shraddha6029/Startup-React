@@ -33,6 +33,29 @@ const ExampleForm = () => {
     lname: ""
   });
 
+  const formInputChange = (event) => {
+    // setName(event.target.value);
+    console.log(event.target.name);
+    console.log(event.target.value);
+
+    const name = event.target.name;
+    const value = event.target.value;
+
+    setNewFullName((preValue) => {
+      if (name === "fname") {
+        return {
+          fname: value,
+          lname: preValue.lname
+        };
+      } else if (name === "lname") {
+        return {
+          fname: preValue.fname,
+          lname: value
+        };
+      }
+    });
+  };
+
   const newOnSubmit = (e) => {
     // setFullName(name);
     e.preventDefault();
@@ -64,13 +87,16 @@ const ExampleForm = () => {
       </Row>
 
       <h4 className="mt-5">Form with object</h4>
+      <h5 className="text-primary">
+        {newFullName.fname} {newFullName.lname}
+      </h5>
       <form onSubmit={newOnSubmit}>
         <FormGroup>
           <Label for="exampleEmail">First Name</Label>
           <Input
             type="text"
             placeholder="First Name"
-            onChange={inputChange}
+            onChange={formInputChange}
             name="fname"
             value={newFullName.fname}
           />
@@ -80,7 +106,7 @@ const ExampleForm = () => {
           <Input
             type="text"
             placeholder="Last Name"
-            onChange={inputChange}
+            onChange={formInputChange}
             name="lname"
             value={newFullName.lname}
           />
