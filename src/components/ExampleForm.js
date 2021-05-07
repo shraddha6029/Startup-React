@@ -61,6 +61,26 @@ const ExampleForm = () => {
     e.preventDefault();
   };
 
+  // spread operatator method 1
+
+  const games = ["a", "b", "c", "d", "e", "f"];
+  const allGames = [1, ...games];
+
+  console.log(allGames);
+
+  // spread operatator method 2
+  const sgames = ["a", "b", "c", "d", "e", "f"];
+  const allGames1 = [1, ...sgames];
+
+  console.log(sgames);
+  console.log(allGames1);
+
+  // spread operatator method 3 ..array desstructuring
+  const ssgames = ["a", "b", "c", "d", "e", "f"];
+  const [first, ...remaining] = ssgames;
+  console.log(first);
+  console.log(remaining);
+
   return (
     <>
       <h4 className="mt-5">Form</h4>
