@@ -42,17 +42,22 @@ const ExampleForm = () => {
     const value = event.target.value;
 
     setNewFullName((preValue) => {
-      if (name === "fname") {
-        return {
-          fname: value,
-          lname: preValue.lname
-        };
-      } else if (name === "lname") {
-        return {
-          fname: preValue.fname,
-          lname: value
-        };
-      }
+      console.log(preValue);
+      return {
+        ...preValue,
+        [name]: value
+      };
+      // if (name === "fname") {
+      //   return {
+      //     fname: value,
+      //     lname: preValue.lname
+      //   };
+      // } else if (name === "lname") {
+      //   return {
+      //     fname: preValue.fname,
+      //     lname: value
+      //   };
+      // }
     });
   };
 
@@ -80,6 +85,21 @@ const ExampleForm = () => {
   const [first, ...remaining] = ssgames;
   console.log(first);
   console.log(remaining);
+
+  // spread operatator method 4
+  const fullName = {
+    fname: "shraddha",
+    lname: "chhatraliya"
+  };
+
+  const biodata = {
+    id: 1,
+    ...fullName,
+    age: 22,
+    gender: "female"
+  };
+
+  console.log(biodata);
 
   return (
     <>
