@@ -8,12 +8,13 @@ import {
   Button,
   FormGroup,
   Input,
-  List,
-  ListInlineItem
+  ListGroup
 } from "reactstrap";
 
+import ToDoList from "./TodoList";
+
 const Todo = () => {
-  const [inputList, setInputList] = useState("Buy Fruits");
+  const [inputList, setInputList] = useState("");
 
   const [items, setItems] = useState([]);
 
@@ -24,6 +25,16 @@ const Todo = () => {
   const addNewList = () => {
     setItems((oldItems) => {
       return [...oldItems, inputList];
+    });
+    setInputList("");
+  };
+
+  const deleteEvent = (id) => {
+    console.log(id + " is deleted");
+    setItems((oldItems) => {
+      return oldItems.filter((ele, index) => {
+        return index !== id;
+      });
     });
   };
 
@@ -38,6 +49,7 @@ const Todo = () => {
                 <Input
                   type="text"
                   placeholder="Add Task here"
+                  value={inputList}
                   onChange={itemEvent}
                 />
               </FormGroup>
@@ -46,11 +58,18 @@ const Todo = () => {
               </Button>
 
               {/* TASKS */}
-              <List className="mt-4">
+              <ListGroup className="mt-4">
                 {items.map((val, index) => {
-                  return <ListInlineItem key="index">{val}</ListInlineItem>;
+                  return (
+                    <ToDoList
+                      text={val}
+                      key={index}
+                      id={index}
+                      onSelect={deleteEvent}
+                    />
+                  );
                 })}
-              </List>
+              </ListGroup>
             </CardBody>
           </Card>
         </Col>
